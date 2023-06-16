@@ -2,9 +2,10 @@ import { useState } from "react";
 import WeatherItem from "../components/WeatherItem";
 import './Home.css'
 
+const API_KEY = import.meta.env.VITE_API_KEY
+
 const Home = () => {
 
-const API_KEY = import.meta.env.VITE_API_KEY
 let city = "Hamburg"
 let lat = 53.550341
 let lon = 10.000654
