@@ -21,7 +21,7 @@ const getWeatherData = () => {
     setWarning(false)
     city = document.querySelector("#cityInput").value;
 
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`)
     .then((res) => res.json())
     .then((data) => {
         setLocationData(data)
@@ -36,7 +36,7 @@ const getWeatherData = () => {
             setSearchDone(true)
         }
 
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
         .then((res) => res.json())
         .then((data) => {
            setWeatherData(data)
