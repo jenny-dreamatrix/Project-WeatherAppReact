@@ -24,7 +24,7 @@ const getWeatherData = () => {
     .then((res) => res.json())
     .then((data) => {
         setLocationData(data)
-        // console.log({data});
+        console.log({data});
 
         if(data === undefined || data.length == 0 ){
             setLocationData([{lat: 53.550341, lon: 10.000654, name: "Hamburg"}])
@@ -35,11 +35,11 @@ const getWeatherData = () => {
             setSearchDone(true)
         }
 
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
         .then((res) => res.json())
         .then((data) => {
            setWeatherData(data)
-            // console.log({data});
+            console.log({data});
         })
         .catch((err) => console.log(`Fehler: ${err}`))
     })
